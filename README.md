@@ -10,9 +10,9 @@ This project leverages REST APIs, which use standard HTTP methods, along with Ty
 
 ##User Management
 ```
- -user Registration
- -user Login
- -user Logout
+ *user Registration
+ *user Login
+ +user Logout
 ```
 ##Volunteer Management
 ```
