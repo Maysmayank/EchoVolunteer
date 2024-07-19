@@ -64,7 +64,12 @@ class Volunteer {
         this.createdAt = createdAt;
     }
 }
-
+/**
+* We utilize the StableBTreeMap for storage in this contract due to its durability and efficiency. 
+* StableBTreeMap is a self-balancing tree that maintains data even when the canister is upgraded which ensures that critical data is not lost during these upgrades.
+* The Reason to leversge is beacuse the operations for inserting, retrieving, and removing items have a constant time complexity (O(1)), making it efficient.
+*
+*/
 const VolunteerStorage = StableBTreeMap<string, Volunteer>(0);                                // Storage for Volunteers, keyed by volunteer_id
 
 const UserStorage = StableBTreeMap<string, User>(1);                                          // Storage for Users, keyed by user_id
