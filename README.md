@@ -77,8 +77,11 @@ Now you can make request to the api endpoints to perform operations
 
 ## Contributions
 
-Contributions to the project are welcome. If you'd like to contribute, please fork the repository, create a new branch, make your changes, and submit a pull request.
-
+Contributions are welcome to this project. If you want to contribute, please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your modifications.
+4. Submit a pull request.
 
 
 
