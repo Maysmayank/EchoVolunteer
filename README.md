@@ -51,7 +51,7 @@ This project leverages REST APIs, which use standard HTTP methods, along with Ty
 ```
  http://INSERT_CANISTER_ID_HERE.localhost:8000
 ```
-Now you can make request to the api endpoints to perform operations
+Now you can make request to the api endpoints to perform operations Using  utility tools like Postman, insomnia ,ThunderClient etc. 
 
 ## API Endpoints
 
