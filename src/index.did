@@ -1,4 +1,14 @@
 service: () -> {
-    http_request: (record {url:text; method:text; body:vec nat8; headers:vec record {text; text}; certificate_version:opt nat16}) -> (record {body:vec nat8; headers:vec record {text; text}; upgrade:opt bool; streaming_strategy:opt variant {Callback:record {token:vec nat8; callback:func (vec nat8) -> (opt record {token:opt vec nat8; body:vec nat8}) query}}; status_code:nat16}) query;
-    http_request_update: (record {url:text; method:text; body:vec nat8; headers:vec record {text; text}}) -> (record {body:vec nat8; headers:vec record {text; text}; upgrade:opt bool; streaming_strategy:opt variant {Callback:record {token:vec nat8; callback:func (vec nat8) -> (opt record {token:opt vec nat8; body:vec nat8}) query}}; status_code:nat16});
+    http_request: (HttpRequest) -> (HttpResponse) query;
+    http_request_update: (record { url: text; method: text; body: vec nat8; headers: vec Header }) -> (HttpResponse);
+    signup_user: (record { username: text; password: text; mail: text }) -> (record { msg: text });
+    login_user: (record { mail: text; password: text }) -> (record { msg: text; userdetails: opt User });
+    logout: (record { userId: text }) -> (record { message: text });
+    assign_role: (record { loginid: text; role: text }) -> (record { msg: text; info: opt User });
+    form_volunteer: (record { loginid: text; name: text; address: text; phone_number: int; centre: text; department: text }) -> (record { msg: text });
+    show_allusers: (record { adminid: text }) -> (vec record { id: text; username: text; mail: text });
+    show_allvolunteers: (record { adminid: text }) -> (vec Volunteer);
+    show_allLoggedusers: (record { adminid: text }) -> (vec User);
+    add_task_to_volunteer: (record { adminId: text; volunteerid: text; title: text; description: text }) -> (record { msg: text; task: Task });
+    show_my_tasks: (record { volunteerid: text }) -> (record { msg: text; Myinfo: opt record { volunteer_id: text; name: text; department: text; tasks: vec Task } });
 }
